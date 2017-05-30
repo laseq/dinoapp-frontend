@@ -2,8 +2,20 @@ angular
   .module('dinoApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$http', 'CurrentUserService', 'TokenService', '$rootScope', '$state'];
-function MainCtrl($http, CurrentUserService, TokenService, $rootScope, $state) {
+MainCtrl.$inject = [
+  '$http',
+  'CurrentUserService',
+  'TokenService',
+  '$rootScope',
+  '$state'
+];
+function MainCtrl(
+  $http,
+  CurrentUserService,
+  TokenService,
+  $rootScope,
+  $state
+) {
   const vm = this;
 
   vm.isNavCollapsed = true;

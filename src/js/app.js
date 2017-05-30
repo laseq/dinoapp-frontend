@@ -3,5 +3,6 @@ angular
   .module('dinoApp', [
     'ui.router',
     'ngResource',
-    'angular-jwt'
+    'angular-jwt',
+    'ngAnimate'
   ]);
