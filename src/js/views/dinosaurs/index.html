@@ -1,8 +1,8 @@
-<h1 class="page-title">Dinosaurs Index</h1>
+<h1 class="page-title">Dinosaur Collection</h1>
 
 <button ui-sref="dinosaursNew" type="button" class="btn btn-primary">Add New Dinosaur</button>
 
-<div class="row">
+<div class="row row-element">
 
   <div ng-repeat="dinosaur in vm.dinosaurs track by $index">
 
@@ -10,13 +10,16 @@
 
       <div class="dinosaur-card text-center thumbnail">
         <h2>{{ dinosaur.name }}</h2>
-        <div class="img-wrapper">
-          <img ng-src="{{ dinosaur.image }}" alt="{{ dinosaur.name }}" class="img-responsive img-thumbnail">
+        <div class="img-wrapper vertical-center">
+          <img ui-sref="dinosaursShow({ id: dinosaur.id })"
+            ng-src="{{ dinosaur.image }}"
+            alt="{{ dinosaur.name }}"
+            class="img-responsive">
         </div>
         <div class="buttons-group">
-          <a ui-sref="dinosaursShow({ id: dinosaur.id })">View</a>
-          <a ui-sref="dinosaursEdit({ id: dinosaur.id })">Edit</a>
-          <a href="javascript:void(0)" ng-click="vm.delete(dinosaur)">Delete</a>
+          <button class="btn btn-primary" ui-sref="dinosaursShow({ id: dinosaur.id })">View</button>
+          <button class="btn btn-primary" ui-sref="dinosaursEdit({ id: dinosaur.id })">Edit</button>
+          <button class="btn btn-danger" href="javascript:void(0)" ng-click="vm.delete(dinosaur)">Delete</button>
         </div>
       </div>
 
