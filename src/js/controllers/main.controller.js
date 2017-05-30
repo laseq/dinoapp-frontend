@@ -6,6 +6,8 @@ MainCtrl.$inject = ['$http', 'CurrentUserService', 'TokenService', '$rootScope',
 function MainCtrl($http, CurrentUserService, TokenService, $rootScope, $state) {
   const vm = this;
 
+  vm.isNavCollapsed = true;
+
   $rootScope.$on('loggedIn', () => {
     vm.user = CurrentUserService.currentUser;
   });
