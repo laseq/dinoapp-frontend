@@ -19,4 +19,5 @@ This is the front-end for a repository of dinosaurs, users can register and comm
 
 ####laseq
 
-####
+####Imran Mughal
+
