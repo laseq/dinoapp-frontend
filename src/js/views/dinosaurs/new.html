@@ -1,33 +1,39 @@
-<div>
-  <h1>New Dinosaur</h1>
-  <!-- <div class="index-wrap pa3 cf" style="height: 100%; width: 80%;"> -->
+<div class="container">
 
-  
-    <form ng-submit="vm.create()">
+  <div class="row">
+    <div class="col-md-6">
 
-      <div>
-        <label  for="name">Name</label>
-        <input  type="text" name="name" id="name" ng-model="vm.dinosaur.name" placeholder="Name" >
+
+    <h1>New Dinosaur</h1>
+    <!-- <div class="index-wrap pa3 cf" style="height: 100%; width: 80%;"> -->
+
+
+      <form ng-submit="vm.create()">
+
+        <div class="form-group">
+          <label  for="name">Name</label>
+          <input class="form-control" type="text" name="name" id="name" ng-model="vm.dinosaur.name" placeholder="Name" >
+        </div>
+
+        <div class="form-group" >
+          <label  for="description">Description</label>
+          <textarea  class="form-control" id="description" name="description" ng-model="vm.dinosaur.description"  placeholder="Write description of your dinosaur here"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="Image">Image</label>
+          <input class="form-control" type="text" name="image" ng-model="vm.dinosaur.image" placeholder="Paste Dinosaur Image address here">
+        </div>
+
+        <div class="form-group">
+          <label for="Period">Period</label>
+          <input class="form-control" type="text" name="period" id="period" ng-model="vm.dinosaur.period" placeholder="The Cretaceous period...">
+        </div>
+
+
+        <div class="form-group">
+          <input class="btn btn-primary" type="submit" value="Add Dinosaur">
+        </div>
+      </form>
       </div>
-
-      <div >
-        <label  for="description">Description</label>
-        <textarea id="description" name="description" ng-model="vm.dinosaur.description"  placeholder="Write description of your dinosaur here"></textarea>
-      </div>
-      <div>
-        <label for="Image">Image</label>
-        <input type="text" name="image" ng-model="vm.dinosaur.image" placeholder="Paste Dinosaur Image address here">
-      </div>
-
-      <div>
-        <label for="Period">Period</label>
-        <input  type="text" name="period" id="period" ng-model="vm.dinosaur.period" placeholder="The Cretaceous period...">
-      </div>
-
-
-      <div>
-        <input type="submit" value="Add Dinosaur">
-      </div>
-    </form>
+    </div>
   </div>
-  <!-- </div> -->

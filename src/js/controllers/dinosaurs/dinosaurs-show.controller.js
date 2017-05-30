@@ -24,6 +24,8 @@ function DinosaursShowCtrl($stateParams, Dinosaur, Comment, $state){
       .$promise
       .then(data => {
         dinosaursShow();
+        console.log(vm.comment);
+        vm.comment = {};
         console.log('data:', data);
       });
   }
