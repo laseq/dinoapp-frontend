@@ -2,5 +2,6 @@
 angular
   .module('dinoApp', [
     'ui.router',
-    'ngResource'
+    'ngResource',
+    'angular-jwt'
   ]);
