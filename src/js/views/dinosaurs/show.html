@@ -1,0 +1,14 @@
+<h1>Dinosaur Show Page</h1>
+
+<h2>{{ vm.dinosaur.name }}</h2>
+
+<img ng-src="{{ vm.dinosaur.image }}" alt="{{ vm.dinosaur.name }}">
+
+<p>Period: {{ vm.dinosaur.period }}</p>
+<p>Description: {{ vm.dinosaur.description }}</p>
+
+<h2>Comments</h2>
+<div ng-repeat="comment in vm.dinosaur.comments">
+  <p>{{ comment.body }}</p>
+  <p>{{ comment.user.username }}</p>
+</div>
