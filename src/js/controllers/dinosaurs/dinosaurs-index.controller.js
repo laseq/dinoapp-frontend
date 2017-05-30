@@ -5,7 +5,7 @@ angular
 DinosaursIndexCtrl.$inject = ['Dinosaur'];
 function DinosaursIndexCtrl(Dinosaur) {
   const vm = this;
-  vm.delete = dinosaursDelete;
+
 
   dinosaursIndex();
 
@@ -13,12 +13,5 @@ function DinosaursIndexCtrl(Dinosaur) {
     vm.dinosaurs = Dinosaur.query();
   }
 
-  function dinosaursDelete(dinosaur) {
-    Dinosaur
-      .delete({ id: dinosaur.id })
-      .$promise
-      .then(() => {
-        dinosaursIndex();
-      });
-  }
+
 }
