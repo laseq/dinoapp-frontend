@@ -1,11 +1,16 @@
-<h1>Dinosaur Show Page</h1>
+<div class="row">
 
-<h2>{{ vm.dinosaur.name }}</h2>
+  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center thumbnail">
+    <h1>{{ vm.dinosaur.name }}</h1>
+    <img ng-src="{{ vm.dinosaur.image }}" alt="{{ vm.dinosaur.name }}" class="img-responsive">
 
-<img ng-src="{{ vm.dinosaur.image }}" alt="{{ vm.dinosaur.name }}">
+    <h4>Period: {{ vm.dinosaur.period }}</h4>
+    <h4>{{ vm.dinosaur.description }}</h4>
+  </div>
 
-<p>Period: {{ vm.dinosaur.period }}</p>
-<p>Description: {{ vm.dinosaur.description }}</p>
+</div>
+
+
 
 <h2>Comments</h2>
 <div ng-repeat="comment in vm.dinosaur.comments">
