@@ -1,0 +1,21 @@
+<h1 class="page-title">Dinosaurs Index</h1>
+
+<a ui-sref="dinosaursNew">Add New Dinosaur</a>
+
+<div>
+  <div ng-repeat="dinosaur in vm.dinosaurs track by $index">
+
+    <div class="dinosaur-card">
+      <h2>{{ dinosaur.name }}</h2>
+      <div class="img-wrapper">
+        <img ng-src="{{ dinosaur.image }}" alt="{{ dinosaur.name }}">
+      </div>
+      <div class="buttons-group">
+        <a ui-sref="dinosaursShow({ id: dinosaur.id })">View</a>
+        <a ui-sref="dinosaursEdit({ id: dinosaur.id })">Edit</a>
+        <a ng-click="vm.delete(dinosaur)">Delete</a>
+      </div>
+    </div>
+
+  </div>
+</div>
