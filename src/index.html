@@ -11,11 +11,15 @@
   </head>
   <body ng-controller="MainCtrl as main">
     <header>
-      <nav>
-          <a ui-sref="home">Home</a>
-          <ul>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home">DinoApp</a>
+          </div>
+          <ul class="nav navbar-nav">
             <li><a ui-sref="dinosaursIndex">Dinosaurs</a></li>
           </ul>
+        </div>
       </nav>
     </header>
     <main ui-view></main>
