@@ -1,25 +1,28 @@
 angular
   .module('dinoApp')
-  .service('TokenService', TokenService);
+  .service('CurrentUserService', CurrentUserService);
 
-TokenService.$inject = ['$window', 'jwtHelper'];
-function TokenService($window, jwtHelper) {
+CurrentUserService.$inject = ['TokenService', '$rootScope', 'User'];
+function CurrentUserService(TokenService, $rootScope, User) {
   const self = this;
 
-  self.setToken = (token) => {
-    return $window.localStorage.setItem('auth-token', token);
+  self.getUser = () => {
+    const decoded = TokenService.decodeToken();
+    if (decoded) {
+      User
+        .get({ id: decoded.id }).$promise
+        .then(data => {
+          self.currentUser = data;
+          $rootScope.$broadcast('loggedIn');
+        });
+    }
   };
 
-  self.getToken = () => {
-    return $window.localStorage.getItem('auth-token');
+  self.removeUser = () => {
+    self.currentUser = null;
+    TokenService.removeToken();
+    $rootScope.$broadcast('loggedOut');
   };
 
-  self.removeToken = () => {
-    $window.localStorage.clear();
-  };
-
-  self.decodeToken = () => {
-    const token = self.getToken();
-    return token ? jwtHelper.decodeToken(token) : null;
-  };
+  self.getUser();
 }
