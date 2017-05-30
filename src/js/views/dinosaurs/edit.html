@@ -1,0 +1,33 @@
+<div>
+  <h1>Edit a Dinosaur</h1>
+
+
+
+    <form ng-submit="vm.update()">
+
+      <div>
+        <label  for="name">Name</label>
+        <input  type="text" name="name" id="name" ng-model="vm.dinosaur.name" placeholder="Name" >
+      </div>
+
+      <div >
+        <label  for="description">Description</label>
+        <textarea id="description" name="description" ng-model="vm.dinosaur.description"  placeholder="Write description of your dinosaur here"></textarea>
+      </div>
+      <div>
+        <label for="Image">Image</label>
+        <input type="text" name="image" ng-model="vm.dinosaur.image" placeholder="Paste Dinosaur Image address here">
+      </div>
+
+      <div>
+        <label for="Period">Period</label>
+        <input  type="text" name="period" id="period" ng-model="vm.dinosaur.period" placeholder="The Cretaceous period...">
+      </div>
+
+
+      <div>
+        <input type="submit" value="edit Dinosaur">
+      </div>
+    </form>
+  </div>
+  <!-- </div> -->
