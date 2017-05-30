@@ -40,3 +40,31 @@ body {
 
   }
 }
+
+.dinosaur-card {
+  padding-bottom: 20px;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.button-row {
+  margin-bottom: 20px;
+}
+
+.comment-div {
+  margin-bottom: 2px;
+  border-bottom: 1px solid #bdbfc1;
+
+  .comment-username {
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 2px;
+  }
+}
+
+.comment-div:first-child {
+  border-top: 1px solid #bdbfc1;
+}
+
+.comment-textarea {
+  margin-bottom: 10px;
+}
