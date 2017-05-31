@@ -1,22 +1,38 @@
-<div class="row">
+<div class="row button-row">
+  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+    <div class="col-md-2 col-sm-3 pull-right">
+      <button class="btn btn-danger" href="javascript:void(0)"
+      ng-click="vm.delete()">Delete Dinosaur</button>
+    </div>
+    <div class="col-md-2 col-sm-3 pull-right">
+      <button class="btn btn-primary" href="javascript:void(0)"
+      ui-sref="dinosaursEdit({ id: vm.dinosaur.id })">Edit Dinosaur</button>
+    </div>
+  </div>
+</div>
 
-  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center thumbnail">
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1
+    text-center thumbnail dinosaur-card">
     <h1>{{ vm.dinosaur.name }}</h1>
     <img ng-src="{{ vm.dinosaur.image }}" alt="{{ vm.dinosaur.name }}" class="img-responsive">
 
     <h4>Period: {{ vm.dinosaur.period }}</h4>
     <h4>{{ vm.dinosaur.description }}</h4>
   </div>
-
 </div>
 
-
-
-<h2>Comments</h2>
-<div ng-repeat="comment in vm.dinosaur.comments">
-  <p>{{ comment.body }}</p>
-  <p>{{ comment.user.username }}</p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+    <h2>Comments &middot; {{ vm.dinosaur.comments.length }}</h2>
+    <div class="list-group">
+      <div class="comment-div" ng-repeat="comment in vm.dinosaur.comments">
+        <p class="comment-username"><span>{{ comment.user.username }}</span></p>
+        <p><span class="comment-body">{{ comment.body }}</span></p>
+      </div>
+    </div>
+    <textarea ng-model="vm.comment.body" name="newcomment"
+    class="col-md-12 col-xs-12 comment-textarea" rows="4" placeholder="Comment on this dinosaur"></textarea>
+    <button ng-click="vm.addComment()" type="button" class="btn btn-success">Add comment</button>
+  </div>
 </div>
-<textarea ng-model="vm.comment.body" name="newcomment" rows="8" cols="80"></textarea>
-<button ng-click="vm.addComment()" type="button" name="button">Add comment</button>
-<a href="javascript:void(0)" ng-click="vm.delete()">Delete</a>
